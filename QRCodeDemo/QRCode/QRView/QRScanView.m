@@ -6,12 +6,12 @@
 //  Copyright © 2016年 刘彬. All rights reserved.
 //
 
-#import "QRView.h"
+#import "QRScanView.h"
 
 #define BOX_WIDTH 300
 
 
-@implementation QRView
+@implementation QRScanView
 - (instancetype)initWithFrame:(CGRect)frame delegate:(id<AVCaptureMetadataOutputObjectsDelegate> )delegate
 {
     self = [super initWithFrame:frame];

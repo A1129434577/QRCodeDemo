@@ -6,22 +6,22 @@
 //  Copyright © 2016年 刘彬. All rights reserved.
 //
 
-#import "QRViewController.h"
-#import "QRView.h"
-@interface QRViewController ()<AVCaptureMetadataOutputObjectsDelegate>
+#import "QRScanViewController.h"
+#import "QRScanView.h"
+@interface QRScanViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 {
-    QRView *_qrView;
+    QRScanView *_qrView;
 }
 @end
 
-@implementation QRViewController
+@implementation QRScanViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"二维码";
     
-    _qrView = [[QRView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) delegate:self];
+    _qrView = [[QRScanView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) delegate:self];
     [self.view addSubview:_qrView];
 }
 

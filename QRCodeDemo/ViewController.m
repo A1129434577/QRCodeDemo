@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "QRViewController.h"
+#import "QRScanViewController.h"
 @interface ViewController ()
 
 @end
@@ -17,14 +18,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake((CGRectGetWidth(self.view.frame)-80)/2, 200, 80, 40)];
+    
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake((CGRectGetWidth(self.view.frame)-120)/2, 200, 120, 40)];
     btn.backgroundColor = [UIColor cyanColor];
-    [btn setTitle:@"扫一扫" forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(qrCodeScan) forControlEvents:UIControlEventTouchUpInside];
+    [btn setTitle:@"生成二维码" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(qrCodecreate) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
+    
+    UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake((CGRectGetWidth(self.view.frame)-120)/2, CGRectGetMaxY(btn.frame)+20, 120, 40)];
+    btn1.backgroundColor = [UIColor cyanColor];
+    [btn1 setTitle:@"扫一扫" forState:UIControlStateNormal];
+    [btn1 addTarget:self action:@selector(qrCodeScan) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn1];
 }
--(void)qrCodeScan{
+
+-(void)qrCodecreate
+{
     [self presentViewController:[[QRViewController alloc] init] animated:YES completion:NULL];
+}
+
+
+
+-(void)qrCodeScan{
+    [self presentViewController:[[QRScanViewController alloc] init] animated:YES completion:NULL];
 }
 
 - (void)didReceiveMemoryWarning {

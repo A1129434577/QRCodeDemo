@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface QRView : UIView
+@interface QRScanView : UIView
 
 @property(nonatomic,strong)AVCaptureSession *session;
 - (instancetype)initWithFrame:(CGRect)frame delegate:(id<AVCaptureMetadataOutputObjectsDelegate> )delegate;
